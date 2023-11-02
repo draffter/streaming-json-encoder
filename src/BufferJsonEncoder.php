@@ -30,7 +30,7 @@ class BufferJsonEncoder extends AbstractJsonEncoder
     }
 
     /** {@inheritdoc} */
-    public function rewind()
+    public function rewind(): void
     {
         $this->buffer = '';
 
@@ -38,7 +38,7 @@ class BufferJsonEncoder extends AbstractJsonEncoder
     }
 
     /** {@inheritdoc} */
-    public function next()
+    public function next(): void
     {
         $this->buffer = '';
 
@@ -49,7 +49,7 @@ class BufferJsonEncoder extends AbstractJsonEncoder
      * Returns the JSON encoded in the current step.
      * @return string|null The currently encoded JSON or null if the state is not valid
      */
-    public function current()
+    public function current(): mixed
     {
         return $this->valid() ? $this->buffer : null;
     }

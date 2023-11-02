@@ -53,7 +53,7 @@ class StreamJsonEncoder extends AbstractJsonEncoder
     }
 
     /** {@inheritdoc} */
-    public function rewind()
+    public function rewind(): void
     {
         $this->bytes = 0;
 
@@ -61,7 +61,7 @@ class StreamJsonEncoder extends AbstractJsonEncoder
     }
 
     /** {@inheritdoc} */
-    public function next()
+    public function next(): void
     {
         $this->bytes = 0;
 
@@ -72,7 +72,7 @@ class StreamJsonEncoder extends AbstractJsonEncoder
      * Returns the bytes written in the last step or null if the encoder is not in valid state.
      * @return int|null The number of bytes written or null when invalid
      */
-    public function current()
+    public function current(): mixed
     {
         return $this->valid() ? $this->bytes : null;
     }
